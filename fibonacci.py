@@ -1,13 +1,9 @@
-def fib(n):
-    d = {}
+def fib(n, d={-1: 0, 0:0, 1:1}):
     if n in d:
         return d[n]
-    if n <= 0:
-        return 0
-    elif n == 1:
-        return 1
     else:
-        return fib(n-1) + fib(n-2)
+        d[n] = fib(n-1) + fib(n-2)
+        return d[n]
 
 print(0, fib(0))
 print(1, fib(1))
@@ -19,3 +15,4 @@ print(6, fib(6))
 print(7, fib(7))
 print(10, fib(10))
 print(20, fib(20))
+print(50, fib(50))
